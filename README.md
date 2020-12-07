@@ -2,6 +2,8 @@
 
 A basic adaptation to ghmattimysql for old vRP (DUNKO).
 
+```Be sure to start in this order ghmattimysql, vrp_mysql and then vrp!```
+
 * Tutorial
 
 1. Delete from `vrp/base.lua` these lines:
