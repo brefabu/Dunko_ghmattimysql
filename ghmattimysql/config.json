@@ -1,7 +1,7 @@
 {
-    "user": "u466_0ZePCbz1FS",
-    "password": "FgRbh^UhFScfSeA654!kta14",
-    "host": "mysql.eu2.fishy.ro",
+    "user": "root",
+    "password": "",
+    "host": "localhost",
     "port": "3306",
-    "database": "s466_allynone"
+    "database": "vrp"
 }
