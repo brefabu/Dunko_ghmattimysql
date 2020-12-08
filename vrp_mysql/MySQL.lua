@@ -35,11 +35,9 @@ function MySQL.query(name, args, cb)
     end
     if cb then
         local task = Task(cb)
-        local res = {}
         exports.ghmattimysql:execute(MySQLCommands[name], args2, function (result)
-          res = result
+          task({result})
         end)
-        task({res})
     else
       exports.ghmattimysql:execute(MySQLCommands[name], args2)
     end
