@@ -1,32 +1,33 @@
 local MySQL = {}
 
-local MySQLCommands = {}
 function MySQL.createCommand(name, command)
-  if not MySQLCommands[name] then
-      MySQLCommands[name] = command
+  if not exports.vrp_mysql:checkCommand(name) then
+    exports.vrp_mysql:registerCommand(name, command)
+  else
+    print("^1MySQL: error the command "..name.." does exist already.^0")
   end
 end
 
 function MySQL.execute(name, args, cb)
-  if MySQLCommands[name] then
+  if exports.vrp_mysql:checkCommand(name) then
       local args2 = {}
       if args then
           for k, v in pairs(args) do
               args2['@'..k] = v
           end
       end
-      exports.ghmattimysql:execute(MySQLCommands[name], args2)
+      exports.ghmattimysql:execute(exports.vrp_mysql:getCommand(name), args2)
       if cb then
           local task = Task(cb)
           task({})
       end
   else
-    print("^1MySQL: error the command "..name.." doesn't exist")
+    print("^1MySQL: error the command "..name.." doesn't exist.^0")
   end
 end
 
 function MySQL.query(name, args, cb)
-  if MySQLCommands[name] then
+  if exports.vrp_mysql:checkCommand(name) then
     local args2 = {}
     if args then
         for k, v in pairs(args) do
@@ -35,14 +36,14 @@ function MySQL.query(name, args, cb)
     end
     if cb then
         local task = Task(cb)
-        exports.ghmattimysql:execute(MySQLCommands[name], args2, function (result)
+        exports.ghmattimysql:execute(exports.vrp_mysql:getCommand(name), args2, function (result)
           task({result})
         end)
     else
-      exports.ghmattimysql:execute(MySQLCommands[name], args2)
+      exports.ghmattimysql:execute(exports.vrp_mysql:getCommand(name), args2)
     end
   else
-    print("^1MySQL: error the command "..name.." doesn't exist")
+    print("^1MySQL: error the command "..name.." doesn't exist.^0")
   end
 end
 

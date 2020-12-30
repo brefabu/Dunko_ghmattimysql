@@ -1,7 +1,7 @@
-description "vRP MySQL"
-
--- server scripts
 server_scripts{ 
-  "@vrp/lib/utils.lua",
-  "MySQL.lua",
+  "init.lua",
 }
+
+server_export 'checkCommand'
+server_export 'getCommand'
+server_export 'registerCommand'
