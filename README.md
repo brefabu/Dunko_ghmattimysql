@@ -12,6 +12,8 @@ A basic adaptation of ghmattimysql for vRPold (DUNKO).
 
 ## Tutorial RO
 
+>Daca aveti deja aceste resurse in scripturile voastre va trebui sa le redenumiti sau sa le stergeti. ( ! Doar pentru vrp_mysql ! )
+
 > Aceste doua linii vor fi puse inainte de `start vrp` in `server.cfg`.
 
 ```lua
