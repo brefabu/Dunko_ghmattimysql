@@ -2,7 +2,15 @@
 
 A basic adaptation of ghmattimysql for vRPold (DUNKO).
 
-* Tutorial RO
+* Just Plug In
+* Easy to use
+* No modifications needed
+* Faster than any other dbdriver
+* Can be used with any other ghmattimysql version
+
+
+
+## Tutorial RO
 
 > Aceste doua linii vor fi puse inainte de `start vrp` in `server.cfg`.
 
@@ -43,7 +51,7 @@ cfg.db = {
     "database": "vrp"
 }
 ```
-* Tutorial EN
+## Tutorial EN
 
 > These to lines will be written before `start vrp` in `server.cfg`.
 
