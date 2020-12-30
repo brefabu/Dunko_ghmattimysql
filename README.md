@@ -1,20 +1,29 @@
-# vRPold-ghmattimysql-Adaptation
+# Dunko ghmattimysql
 
-A basic adaptation to ghmattimysql for old vRP (DUNKO).
+A basic adaptation of ghmattimysql for vRPold (DUNKO).
 
-```Be sure to start in this order ghmattimysql, vrp_mysql and then vrp!```
+* Tutorial RO
 
-* Tutorial
+> Aceste doua linii vor fi puse inainte de `start vrp` in `server.cfg`.
 
-1. Delete from `vrp/base.lua` these lines:
+```lua
+start ghmattimysql
+start vrp_mysql
+```
+
+> Se vor sterge din `vrp/base.lua` aceste linii:
+
 ```lua
 MySQL.debug = config.debug
+```
 
+```lua
 -- open MySQL connection
 MySQL.createConnection("vRP", config.db.host,config.db.user,config.db.password,config.db.database)
 ```
 
-2. Delete from `vrp/cfg/base.lua` these lines:
+> Se vor sterge din `vrp/cfg/base.lua` aceste linii:
+
 ```lua
 cfg.db = {
   host = "127.0.0.1", -- database ip (default is local)
@@ -23,8 +32,8 @@ cfg.db = {
   password = ""   -- password of your database
 }
 ```
+> Configuram in `ghmattimysql/config.json` cu detalii bazei noastre de date:
 
-3. Go to your `ghmattimysql/config.json` and edit by you like:
 ```json
 {
     "user": "root",
@@ -34,5 +43,44 @@ cfg.db = {
     "database": "vrp"
 }
 ```
+* Tutorial EN
 
-4. Enjoy it!
+> These to lines will be written before `start vrp` in `server.cfg`.
+
+```lua
+start ghmattimysql
+start vrp_mysql
+```
+
+> These lines will be deleted from `vrp/base.lua`:
+
+```lua
+MySQL.debug = config.debug
+```
+
+```lua
+-- open MySQL connection
+MySQL.createConnection("vRP", config.db.host,config.db.user,config.db.password,config.db.database)
+```
+
+> These lines will be deleted form `vrp/cfg/base.lua`:
+
+```lua
+cfg.db = {
+  host = "127.0.0.1", -- database ip (default is local)
+  database = "vrpfx",   -- name of database
+  user = "root",    --  database username
+  password = ""   -- password of your database
+}
+```
+> In `ghmattimysql/config.json` you will configure with your db details:
+
+```json
+{
+    "user": "root",
+    "password": "",
+    "host": "localhost",
+    "port": "3306",
+    "database": "vrp"
+}
+```
