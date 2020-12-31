@@ -53,6 +53,15 @@ cfg.db = {
     "database": "vrp"
 }
 ```
+
+> Daca intampinati urmatoarea eroare:
+
+```
+[ERROR] CONNECT ETIMEDOUT
+```
+
+> Da-ti start la resursele de tip `STREAM` ( masini, skinuri, mapping ) inainte de `start ghmattimysql`!
+
 ## Tutorial EN
 
 > These to lines will be written before `start vrp` in `server.cfg`.
@@ -94,3 +103,11 @@ cfg.db = {
     "database": "vrp"
 }
 ```
+
+> If you have this error:
+
+```
+[ERROR] CONNECT ETIMEDOUT
+```
+
+> Set start to `STREAM` type resources ( cars, skins, mappings ) before `start ghmattimysql`!
